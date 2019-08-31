@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4E4A40">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_task_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:onClick="closeAddTask"
+                android:padding="5dp"
+                android:src="@drawable/ic_action_close" />
+
+            <TextView
+                android:id="@+id/toolbar_task_add_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="0dp"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="16dp"
+                android:paddingRight="4dp"
+                android:text="Create"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:onClick="doneAddTask"
+                android:padding="5dp"
+                android:src="@drawable/ic_action_done" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_task_add"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:background="#4E4A40"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <EditText
+            android:id="@+id/task_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Task"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textColorHint="#CCCCCC" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D2D2D2" />
+
+        <EditText
+            android:id="@+id/task_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Task Date"
+            android:onClick="showStartDatePicker"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textColorHint="#CCCCCC" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D2D2D2" />
+
+        <EditText
+            android:id="@+id/task_desc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Task Description"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textColorHint="#CCCCCC" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D2D2D2" />
+
+        <CheckBox
+            android:id="@+id/checkBox0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/checkBox1"
+            android:layout_centerHorizontal="true"
+            android:text="Do you need a reminder?"
+            android:textColor="@color/cardview_light_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:color="@android:color/white"
+            android:paddingBottom="15sp"
+            android:text="\nSend Reminder to:"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/task_phone"
+            android:layout_width="212dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:width="@dimen/cardview_default_radius"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Enter Phone Number(s)"
+            android:padding="1dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textColorHint="#CCCCCC" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/checkBox1"
+            android:layout_centerHorizontal="true"
+            android:text="Text"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/checkBox2"
+            android:layout_alignStart="@+id/checkBox2"
+            android:layout_alignLeft="@+id/checkBox2"
+            android:layout_alignBottom="@id/checkBox2"
+            android:checked="false"
+            android:text="Phone call"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/task_email"
+            android:layout_width="212dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:width="@dimen/cardview_default_radius"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Enter Email Address(es)"
+            android:padding="1dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textColorHint="#CCCCCC" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/checkBox2"
+            android:layout_alignStart="@+id/checkBox2"
+            android:layout_alignLeft="@+id/checkBox2"
+            android:layout_alignBottom="@id/checkBox2"
+            android:checked="false"
+            android:text="Email"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Delete Task" />
+
+    </LinearLayout>
+</RelativeLayout>
